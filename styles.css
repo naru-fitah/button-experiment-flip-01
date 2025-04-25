@@ -1,0 +1,70 @@
+.color-flip-button {
+    position: relative;
+    display: inline-block;
+    border: none;
+    padding: 0;
+    background: none;
+    cursor: pointer;
+    font-family: monospace;
+    font-size: 14px;
+    font-weight: 400;
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  
+  .button-face {
+    display: block;
+    padding: 12px 16px;
+    border-radius: 4px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    white-space: nowrap;
+    text-align: center;
+    transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1); /* Bounce-like easing */
+    box-sizing: border-box;
+  }
+  
+  .color-flip-button .default {
+    position: relative;
+    background-color: #f2efea;
+    color: black;
+    z-index: 2;
+  }
+  
+  .color-flip-button .hovered {
+    background-color: #ec5c25;
+    color: black;
+    transform: translateY(100%);
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+  }
+  
+  /* Animate the arrow */
+  .arrow {
+    display: inline-block;
+    transform: translateX(-6px);
+    opacity: 0;
+    transition: transform 0.4s ease, opacity 0.4s ease;
+  }
+  
+  /* Hover state with bounce + arrow entrance */
+  .color-flip-button:hover .hovered {
+    transform: translateY(0%);
+    z-index: 3;
+  }
+  
+  .color-flip-button:hover .default {
+    transform: translateY(-100%);
+  }
+  
+  .color-flip-button:hover .arrow {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  
+  
